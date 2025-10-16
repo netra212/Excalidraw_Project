@@ -17,7 +17,11 @@ export function Canvas({
 
   return (
     <div>
-      <canvas ref={canvasRef} width={2000} height={1000}></canvas>
+      <canvas
+        ref={canvasRef}
+        width={window.innerWidth}
+        height={window.innerHeight}
+      ></canvas>
     </div>
   );
 }

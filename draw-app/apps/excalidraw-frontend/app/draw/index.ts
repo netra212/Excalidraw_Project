@@ -20,7 +20,7 @@ type Shape =
 export async function initDraw(
   canvas: HTMLCanvasElement,
   roomId: string,
-  socket
+  socket: WebSocket
 ) {
   const ctx = canvas.getContext("2d");
 
@@ -42,8 +42,8 @@ export async function initDraw(
 
   clearCanvas(existingShapes, canvas, ctx);
 
-  ctx.fillStyle = "rgba(0, 0, 0)";
-  ctx.fillRect(0, 0, canvas.width, canvas.height);
+  // ctx.fillStyle = "rgba(0, 0, 0)";
+  // ctx.fillRect(0, 0, canvas.width, canvas.height);
 
   let clicked = false;
   let startX = 0;
@@ -85,7 +85,7 @@ export async function initDraw(
       const height = e.clientY - startY;
       clearCanvas(existingShapes, canvas, ctx);
       ctx.strokeStyle = "rgba(255, 255, 255)";
-      ctx.strokeRect(startX, startY, width, height);
+      ctx.strokeRect(startX, startY, width, height); // showing the rectangle
     }
   });
 }
